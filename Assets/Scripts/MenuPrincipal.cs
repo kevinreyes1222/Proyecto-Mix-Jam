@@ -30,4 +30,8 @@ public class MenuPrincipal : MonoBehaviour
         menuOpciones.SetActive(false );
         menuPrincipal.SetActive(true);
     }
+    public void volverMenu()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
 }
