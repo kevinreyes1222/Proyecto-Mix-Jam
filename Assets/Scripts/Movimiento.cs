@@ -20,7 +20,7 @@ public class Movimiento : MonoBehaviour
     private void FixedUpdate()
     {
         horizontal = Input.GetAxis("Horizontal");
-        Vector3 mov = new Vector3(1, 0, 0) * Time.deltaTime * velocidad;
+        Vector3 mov = new Vector3(1, body.velocity.y, body.velocity.z) * Time.deltaTime * velocidad;
         Vector3 salto = new Vector3(0, 1, 0) * Time.deltaTime * jumpForce;
         body.velocity = mov;
 
@@ -28,5 +28,7 @@ public class Movimiento : MonoBehaviour
         {
             body.velocity = salto;
         }
+
+        
     }
 }
