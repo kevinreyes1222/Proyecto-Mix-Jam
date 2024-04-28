@@ -15,6 +15,8 @@ public class gamerOver : MonoBehaviour
     public void volverAjugar()
     {
         GameOver.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
     }
 
     void OnCollisionEnter(Collision collison)
@@ -22,6 +24,7 @@ public class gamerOver : MonoBehaviour
         if (collison.gameObject.CompareTag("Player"))
         {
             GameOver.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
