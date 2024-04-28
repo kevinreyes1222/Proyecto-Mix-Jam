@@ -8,9 +8,10 @@ public class Pool : MonoBehaviour
     [SerializeField] private List<GameObject> obstaclePrefab;
     [SerializeField] private int poolSize = 3;
     [SerializeField] private float spawnTime = 6.72f;
-    [SerializeField] private float xSpawnPos = 42.4f;
+    [SerializeField] private float xSpawnPos = -7.34f;
+    [SerializeField] private float ySpawnPos = 6f;
 
-    
+
     private float timeElapsed;
 
     private int obstacleCount;
@@ -23,7 +24,7 @@ public class Pool : MonoBehaviour
         obstacles = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++)
         {
-            int indexPrefab = Random.Range(-1, 3);
+            int indexPrefab = Random.Range(0, 3);
 
             obstacles[i] = Instantiate(obstaclePrefab[indexPrefab]);
             obstacles[i].SetActive(false);
@@ -45,7 +46,7 @@ public class Pool : MonoBehaviour
         timeElapsed = 0f;
 
         
-        Vector3 spawnPos = new Vector3(xSpawnPos, 0);
+        Vector3 spawnPos = new Vector3(xSpawnPos, ySpawnPos);
         obstacles[obstacleCount].transform.position = spawnPos;
 
         if (!obstacles[obstacleCount].activeSelf)
