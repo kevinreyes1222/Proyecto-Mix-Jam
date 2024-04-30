@@ -5,6 +5,7 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     private Animator animator;
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -44,7 +45,8 @@ public class Personaje : MonoBehaviour
     void Attack()
     {
         animator.SetBool("isAttacking", true);
-        Invoke("attackfalse", 2.10f);
+        Invoke("attackfalse", 1.2f);
+        
     }
     void attackfalse()
     {
@@ -60,4 +62,5 @@ public class Personaje : MonoBehaviour
         animator.SetBool("isCrouching", false);
     }
 
+    
 }
