@@ -5,16 +5,20 @@ using UnityEngine;
 public class Personaje : MonoBehaviour
 {
     private Animator animator;
-    
+    public float fuerzaSalto = 10;
+    public bool enSuelo;
+    private Rigidbody rb;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
     }
 
-    
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (enSuelo && Input.GetKeyDown(KeyCode.W))
         {
             Jump();
         }
@@ -32,10 +36,13 @@ public class Personaje : MonoBehaviour
 
         }
     }
+
     void Jump()
     {
+        rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+        enSuelo = false;
         animator.SetBool("isJumping", true);
-        Invoke("jumpfasle", 4.2f);
+        
     }
     void jumpfasle()
     {
@@ -46,7 +53,7 @@ public class Personaje : MonoBehaviour
     {
         animator.SetBool("isAttacking", true);
         Invoke("attackfalse", 1.2f);
-        
+
     }
     void attackfalse()
     {
@@ -61,6 +68,13 @@ public class Personaje : MonoBehaviour
     {
         animator.SetBool("isCrouching", false);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Suelo"))
+        {
+            enSuelo = true;
+            jumpfasle();
+        }
 
-    
+    }
 }
