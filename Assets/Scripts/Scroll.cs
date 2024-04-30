@@ -5,17 +5,26 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour
 {
-    private Rigidbody rb;
-    public float speed;
+    
+    public float speed = 6;
+    public Vector3 mov = new Vector3(1, 0.5f, 0);
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.right * speed;
+        
+        
 
     }
     // Update is called once per frame
     void Update()
     {
+        //rb.velocity = mov * speed;
+    }
+
+    private void FixedUpdate()
+    {
+        
+        transform.Translate(mov * speed * Time.deltaTime);
+       // rb.MovePosition(mov * speed);
     }
 }

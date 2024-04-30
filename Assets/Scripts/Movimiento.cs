@@ -7,28 +7,31 @@ using UnityEngine.UIElements;
 public class Movimiento : MonoBehaviour
 {
     public Rigidbody body;
-    public float velocidad = 1;
+    
     public float jumpForce = 1000;
+    private float posInicialX;
     void Start()
     {
-        
+        posInicialX = transform.position.x;
     }
-    float horizontal;
+   
     
 
 
     private void FixedUpdate()
     {
-        horizontal = Input.GetAxis("Horizontal");
-        Vector3 mov = new Vector3(1, body.velocity.y, body.velocity.z) * Time.deltaTime * velocidad;
+       
+        
         Vector3 salto = new Vector3(0, 1, 0) * Time.deltaTime * jumpForce;
-        body.velocity = mov;
+     
 
         if (Input.GetKeyDown("space"))
         {
             body.velocity = salto;
         }
 
-        
+        Vector3 newPos = transform.position;
+        newPos.x = posInicialX;
+        transform.position = newPos;
     }
 }
