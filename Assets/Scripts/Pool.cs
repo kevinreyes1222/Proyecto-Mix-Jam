@@ -5,62 +5,36 @@ using UnityEngine;
 public class Pool : MonoBehaviour
 {
     //[SerializeField] private GameObject obstaclePrefab;
-    [SerializeField] private List<GameObject> obstaclePrefab;
-    [SerializeField] private int poolSize = 3;
-    [SerializeField] private float spawnTime = 6.72f;
-    [SerializeField] private float xSpawnPos = -7.34f;
-    [SerializeField] private float ySpawnPos = 6f;
+    public List<GameObject> obstaclePrefab;
+    
+  
+    public ReferencePoint referencePoint;
+   
+    
 
-
-    private float timeElapsed;
-
-    private int obstacleCount;
-
-
-    private GameObject[] obstacles;
+   
 
     void Start()
     {
-        obstacles = new GameObject[poolSize];
-        for (int i = 0; i < poolSize; i++)
-        {
-            int indexPrefab = Random.Range(0, 3);
-
-            obstacles[i] = Instantiate(obstaclePrefab[indexPrefab]);
-            obstacles[i].SetActive(false);
-        }
-    }
-
-
-    void Update()
-    {
-        timeElapsed += Time.deltaTime;
-        if (timeElapsed > spawnTime  /*&& !GameManager.Instance.isGameOver*/)
-        {
-            SpawnObstacle();
-        }
-    }
-
-    void SpawnObstacle()
-    {
-        timeElapsed = 0f;
+            SpawnObstacle(Random.Range(0,obstaclePrefab.Count));
 
         
-        Vector3 spawnPos = new Vector3(xSpawnPos, ySpawnPos);
-        obstacles[obstacleCount].transform.position = spawnPos;
 
-        if (!obstacles[obstacleCount].activeSelf)
-        {
-            obstacles[obstacleCount].SetActive(true);
+    }
 
-        }
 
-        obstacleCount++;
+    
 
-        if (obstacleCount == poolSize)
-        {
-            obstacleCount = 0;
-        }
+    public void SpawnObstacle(int num)
+    {
+        
+       
+
+
+        referencePoint = Instantiate(obstaclePrefab[num], referencePoint.spawnPoint.position,Quaternion.identity).GetComponent<ReferencePoint>();
+
+        
+
 
     }
 }
