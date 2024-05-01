@@ -26,7 +26,7 @@ public class Corredora : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
 
-        if (other.CompareTag("player")) 
+        if (other.CompareTag("player") && !Personaje.isGameOver) 
         {
             muerte();
             Invoke("destruir",4.5f);

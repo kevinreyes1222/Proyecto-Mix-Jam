@@ -97,15 +97,17 @@ public class Personaje : MonoBehaviour
             jumpfasle();
         }
 
-        
-            if (collision.gameObject.CompareTag("enemigo"))
-            {
+
+        if (collision.gameObject.CompareTag("enemigo") && !isGameOver)
+        {
             animator.SetTrigger("gameOver");
 
             isGameOver = true;
-            }
+        }
 
 
 
-          }
+    }
+
+    
 }

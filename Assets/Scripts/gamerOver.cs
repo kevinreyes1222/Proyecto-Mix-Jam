@@ -38,4 +38,14 @@ public class gamerOver : MonoBehaviour
             GameOver.SetActive(true);
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "player")
+        {
+            Invoke("gameOverInvoke", 1.15f);
+            Scroll.canScroll = false;
+        }
+        
+    }
 }
