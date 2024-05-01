@@ -98,13 +98,18 @@ public class Personaje : MonoBehaviour
         }
 
 
-        if (collision.gameObject.CompareTag("enemigo") && !isGameOver)
+        if (collision.gameObject.CompareTag("enemigo")  && !isGameOver)
         {
             animator.SetTrigger("gameOver");
 
             isGameOver = true;
         }
+        if (collision.gameObject.tag == "gameOverCollider" && !isGameOver)
+        {
+            animator.SetTrigger("gameOver");
 
+            isGameOver = true;
+        }
 
 
     }
