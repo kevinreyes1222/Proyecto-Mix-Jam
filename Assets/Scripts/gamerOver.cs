@@ -8,13 +8,7 @@ public class gamerOver : MonoBehaviour
 {
     public GameObject GameOver;
     public GameObject menu;
-    private void Start()
-    {
-        if (!Personaje.isGameOver) 
-        {
-            GameOver.SetActive(false);
-        }
-    }
+    
     public void volverMenu()
     {
         menu.SetActive(true);
@@ -23,8 +17,9 @@ public class gamerOver : MonoBehaviour
 
     public void volverAjugar()
     {
+        Personaje.isGameOver = false;
+
         SceneManager.LoadScene("SampleScene");
-        
         
         //Time.timeScale = 1;
     }
