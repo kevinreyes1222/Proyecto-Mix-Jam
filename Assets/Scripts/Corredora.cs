@@ -18,10 +18,15 @@ public class Corredora : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0)) 
         {
             triggerDaño.SetActive(true);
+            Invoke("triggerdañofalse", 1);
         }
 
         
        
+    }
+    void triggerdañofalse()
+    {
+        triggerDaño.SetActive(false);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -29,7 +34,7 @@ public class Corredora : MonoBehaviour
         if (other.CompareTag("player") && !Personaje.isGameOver) 
         {
             muerte();
-            Invoke("destruir",4.5f);
+            Invoke("destruir",0.1f);
         }
         
             

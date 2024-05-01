@@ -9,6 +9,7 @@ TagManager:
   - enemigo
   - Suelo
   - player
+  - GameOverCollider
   layers:
   - Default
   - TransparentFX

@@ -105,9 +105,15 @@ public class Personaje : MonoBehaviour
             isGameOver = true;
         }
 
+        if (collision.gameObject.CompareTag("GameOverCollider") && !isGameOver)
+        {
+            
+
+            isGameOver = true;
+        }
 
 
     }
 
-    
+
 }

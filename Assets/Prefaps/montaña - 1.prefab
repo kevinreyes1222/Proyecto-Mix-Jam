@@ -9609,10 +9609,9 @@ GameObject:
   - component: {fileID: 4089086041042598346}
   - component: {fileID: 6560571792469446652}
   - component: {fileID: 8015087591426273270}
-  - component: {fileID: 6863072902217749829}
   m_Layer: 0
   m_Name: GameOverCollider
-  m_TagString: enemigo
+  m_TagString: GameOverCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9703,19 +9702,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6863072902217749829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3262571182768385430}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4516a74cb36d4cf4f86ee9692bff6b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOver: {fileID: 0}
 --- !u!1 &3268493536496335815
 GameObject:
   m_ObjectHideFlags: 0
