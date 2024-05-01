@@ -116,8 +116,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.1056087, y: 0.8361251, z: 0.20850734}
-  m_Center: {x: -0.017215906, y: 0.0000000014910599, z: -0.016407967}
+  m_Size: {x: 1.3062662, y: 0.44007578, z: 0.08187121}
+  m_Center: {x: -0.0042121666, y: -0.008926319, z: -0.006794504}
 --- !u!1 &2523721168543803391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 447b36f89d80b4e469a1e3bc80163ad2, type: 3}
@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1994dc91791a34c8a9c8b868d4e7da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlay: 0
+  menuInicial: {fileID: 0}
   fuerzaSalto: 10
   enSuelo: 0
 --- !u!95 &5388846275016097222

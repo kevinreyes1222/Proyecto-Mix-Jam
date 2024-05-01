@@ -8,8 +8,8 @@ public class Scroll : MonoBehaviour
     
     public float speed = 6;
     public Vector3 mov = new Vector3(1, 0.5f, 0);
-
-    Personaje personajeRefence;
+    public static bool canScroll = false;
+  
 
 
     private void Start()
@@ -27,11 +27,16 @@ public class Scroll : MonoBehaviour
     private void FixedUpdate()
     {
         
-       
-        // rb.MovePosition(mov * speed);
-        if (personajeRefence.isPlay== true)
+
+        if (canScroll)
         {
-            transform.Translate(mov * speed * Time.deltaTime);
+            move();
         }
+    }
+
+    void move()
+    {
+        transform.Translate(mov * speed * Time.deltaTime);
+
     }
 }

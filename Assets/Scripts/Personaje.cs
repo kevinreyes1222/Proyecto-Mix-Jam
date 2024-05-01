@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public bool  isPlay = false;
+    
     public GameObject menuInicial;
     private Animator animator;
     public float fuerzaSalto = 10;
@@ -44,15 +44,12 @@ public class Personaje : MonoBehaviour
             Attack();
 
         }
-        if (menuInicial.activeSelf == false)
-        {
-            iniciarjuego();
-        }
+       
     }
     public void iniciarjuego()
     {
         animator.SetBool("startGame", true);
-        isPlay = true;
+        Scroll.canScroll = true;
     }
 
     void Jump()
