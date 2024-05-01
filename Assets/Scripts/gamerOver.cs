@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 public class gamerOver : MonoBehaviour
 {
     public GameObject GameOver;
+    public GameObject menu;
     
     public void volverMenu()
     {
-        
+        menu.SetActive(true);
     }
 
     public void volverAjugar()
