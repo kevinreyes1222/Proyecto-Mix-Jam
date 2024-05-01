@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 
 public class gamerOver : MonoBehaviour
@@ -9,22 +10,32 @@ public class gamerOver : MonoBehaviour
     
     public void volverMenu()
     {
-        SceneManager.LoadScene("MenuPrincipal");
+        
     }
 
     public void volverAjugar()
     {
         GameOver.SetActive(false);
         SceneManager.LoadScene("SampleScene");
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 
-    void OnCollisionEnter(Collision collison)
+
+    private void Update()
     {
-        if (collison.gameObject.CompareTag("Player"))
+        if (Personaje.isGameOver)
         {
-            GameOver.SetActive(true);
-            Time.timeScale = 0;
+            Invoke("gameOverInvoke", 1.15f);
+            Scroll.canScroll = false;
         }
+    }
+    
+            
+        
+    
+
+  void  gameOverInvoke() { 
+            GameOver.SetActive(true);
+
     }
 }

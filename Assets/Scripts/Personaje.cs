@@ -11,6 +11,7 @@ public class Personaje : MonoBehaviour
     public bool enSuelo;
     private Rigidbody rb;
     private float posInicialX;
+    public static bool isGameOver = false;
     void Start()
     {
 
@@ -44,14 +45,19 @@ public class Personaje : MonoBehaviour
             Attack();
 
         }
-       
+        
     }
     public void iniciarjuego()
     {
         animator.SetBool("startGame", true);
-        Scroll.canScroll = true;
-    }
+        Invoke("ground", 1f);
 
+    }
+    void ground()
+    {
+        Scroll.canScroll = true;
+
+    }
     void Jump()
     {
         rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
@@ -91,5 +97,15 @@ public class Personaje : MonoBehaviour
             jumpfasle();
         }
 
-    }
+        
+            if (collision.gameObject.CompareTag("enemigo"))
+            {
+            animator.SetTrigger("gameOver");
+
+            isGameOver = true;
+            }
+
+
+
+          }
 }
