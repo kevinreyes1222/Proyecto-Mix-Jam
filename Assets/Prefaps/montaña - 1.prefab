@@ -11979,7 +11979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5e0a60d3ae84c4492d66f7b76687b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 10
   mov: {x: -1, y: 0.5, z: 0}
 --- !u!114 &1635367015784186667
 MonoBehaviour:
@@ -15787,7 +15787,7 @@ GameObject:
   - component: {fileID: 4228414937619282495}
   m_Layer: 0
   m_Name: Cube.001
-  m_TagString: Untagged
+  m_TagString: Suelo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

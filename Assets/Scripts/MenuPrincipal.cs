@@ -10,7 +10,7 @@ public class MenuPrincipal : MonoBehaviour
     public GameObject menuOpciones;
     public void jugar ()
     {
-        SceneManager.LoadScene("SampleScene");
+        menuPrincipal.SetActive(false);
     }
 
     public void salir() 

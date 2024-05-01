@@ -2249,6 +2249,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7276037816977349452, guid: 67556710dd22cd14bae7055832aed039, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7276037816977349452, guid: 67556710dd22cd14bae7055832aed039, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}

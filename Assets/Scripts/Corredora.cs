@@ -23,13 +23,13 @@ public class Corredora : MonoBehaviour
         
        
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
 
-        if (other.CompareTag("Player")) 
+        if (other.CompareTag("player")) 
         {
             muerte();
-            Invoke("destruir", 2.30f);
+            Invoke("destruir",4.5f);
         }
         
             

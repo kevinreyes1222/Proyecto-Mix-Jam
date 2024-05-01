@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
+    public bool  isPlay = false;
+    public GameObject menuInicial;
     private Animator animator;
     public float fuerzaSalto = 10;
     public bool enSuelo;
     private Rigidbody rb;
-
+    private float posInicialX;
     void Start()
     {
+
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        posInicialX = transform.position.x;
     }
 
-
+    private void FixedUpdate()
+    {
+        Vector3 newPos = transform.position;
+        newPos.x = posInicialX;
+        transform.position = newPos;
+    }
     void Update()
     {
         if (enSuelo && Input.GetKeyDown(KeyCode.W))
@@ -35,6 +44,15 @@ public class Personaje : MonoBehaviour
             Attack();
 
         }
+        if (menuInicial.activeSelf == false)
+        {
+            iniciarjuego();
+        }
+    }
+    public void iniciarjuego()
+    {
+        animator.SetBool("startGame", true);
+        isPlay = true;
     }
 
     void Jump()
@@ -52,7 +70,7 @@ public class Personaje : MonoBehaviour
     void Attack()
     {
         animator.SetBool("isAttacking", true);
-        Invoke("attackfalse", 1.2f);
+        Invoke("attackfalse", 1.1f);
 
     }
     void attackfalse()

@@ -9,6 +9,9 @@ public class Scroll : MonoBehaviour
     public float speed = 6;
     public Vector3 mov = new Vector3(1, 0.5f, 0);
 
+    Personaje personajeRefence;
+
+
     private void Start()
     {
         
@@ -24,7 +27,11 @@ public class Scroll : MonoBehaviour
     private void FixedUpdate()
     {
         
-        transform.Translate(mov * speed * Time.deltaTime);
-       // rb.MovePosition(mov * speed);
+       
+        // rb.MovePosition(mov * speed);
+        if (personajeRefence.isPlay== true)
+        {
+            transform.Translate(mov * speed * Time.deltaTime);
+        }
     }
 }
